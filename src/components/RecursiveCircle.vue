@@ -1,8 +1,7 @@
 <template>
   <hovering-circle
     :circle-width="width"
-    :padding="padding"
-    :radius="radius"
+    :border-radius="borderRadius"
     :color="color"
     @changeColor="
       () => {
@@ -17,10 +16,12 @@
   >
     <recursive-circle
       v-if="width > padding"
-      :width="width - padding - radius"
+      :width="width - padding - borderRadius"
       @colorChanged="() => (color = '#fff')"
       @colorReturned="() => (color = defaultColor)"
-      :defaultColor="makeLighter(defaultColor, 30)"
+      :defaultColor="makeLighter(defaultColor, 5)"
+      :padding="padding"
+      :borderRadius="borderRadius"
     ></recursive-circle>
   </hovering-circle>
 </template>
@@ -33,12 +34,12 @@ export default {
   props: {
     width: { type: Number, default: 500 },
     defaultColor: { type: String, default: "#000" },
+    padding: { type: Number, default: 50 },
+    borderRadius: { type: Number, default: 10 },
   },
   data() {
     return {
-      padding: 50,
       color: this.defaultColor,
-      radius: 10,
     };
   },
   methods: {

@@ -4,7 +4,7 @@
     :style="{
       width: circleWidth + 'px',
       height: circleWidth + 'px',
-      border: radius + 'px solid ' + color,
+      border: borderRadius + 'px solid ' + color,
     }"
     @mouseleave="makeColorDefault"
     @mouseenter="changeColor"
@@ -28,9 +28,8 @@ export default {
   setup() {},
 
   props: {
-    padding: { type: Number, default: 30 },
     circleWidth: { type: Number, default: 500 },
-    radius: { type: Number, default: 5 },
+    borderRadius: { type: Number, default: 5 },
     color: { type: String, default: "black" },
   },
   data() {},

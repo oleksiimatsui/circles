@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <recursive-circle :width="500"></recursive-circle>
+    <recursive-circle
+      :width="500"
+      :border-radius="6"
+      :padding="40"
+      default-color="#271d4a"
+    ></recursive-circle>
   </div>
 </template>
 
