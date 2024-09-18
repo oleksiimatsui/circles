@@ -9,6 +9,7 @@
     @mouseleave="makeColorDefault"
     @mouseenter="changeColor"
   >
+    <!-- add inner div for making the color default when mouse is inside the circle -->
     <div
       @mouseleave="changeColor"
       @mouseenter="makeColorDefault"
@@ -19,6 +20,7 @@
         height: '100%',
       }"
     >
+      <!-- make it possible to add children components -->
       <slot></slot>
     </div>
   </div>
